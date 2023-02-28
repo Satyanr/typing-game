@@ -1020,6 +1020,17 @@ function loadgame(){
   var intervallodatm = setInterval(ldtime, 400);
   startgameel.style.display = "flex";
   myGameArea.start();
+  var wsh = window.innerWidth - 220;
+  var wsc = window.innerWidth - 175;    
+  
+  enemypiece = new component(560, 150, "asset/boat.png", 10, 200, "image");
+  myGamePiece = new component(560, 150, "asset/boat2.png", 10, 320,"image");
+  myScore = new component("25px", "Consolas", "#e0c824", wsc, 55, "text");
+  distance = new component("25px", "Consolas", "#e0c824", 50, 55, "text");
+  mshape = new component(300, 100, "asset/tmbg.png", -20, -10,"image");
+  sshape = new component(200, 100, "asset/scbg.png", wsh, -10,"image");
+  batasarena = new component(10, 500, "white", innerWidth, 0);
+  myBackground = new component(2933, 500, "asset/bg.jpg", 0, 0, "background");
 
   function ldtime() {
     if (loadtm >= 10) {
@@ -1174,17 +1185,6 @@ function startGame() {
     // Focus on text on start
     text.focus();
 
-    var wsh = window.innerWidth - 220;
-    var wsc = window.innerWidth - 175;    
-    
-    enemypiece = new component(560, 150, "asset/boat.png", 10, 200, "image");
-    myGamePiece = new component(560, 150, "asset/boat2.png", 10, 320,"image");
-    myScore = new component("25px", "Consolas", "#e0c824", wsc, 55, "text");
-    distance = new component("25px", "Consolas", "#e0c824", 50, 55, "text");
-    mshape = new component(300, 100, "asset/tmbg.png", -20, -10,"image");
-    sshape = new component(200, 100, "asset/scbg.png", wsh, -10,"image");
-    batasarena = new component(10, 500, "white", innerWidth, 0);
-    myBackground = new component(2933, 500, "asset/bg.jpg", 0, 0, "background");
     myMusic.play();
     
     countingdown();
