@@ -1018,10 +1018,11 @@ const words = [
 function loadgame(){
   var loadtm = 0;
   var intervallodatm = setInterval(ldtime, 400);
+  startgameel.style.display = "flex";
+  myGameArea.start();
 
   function ldtime() {
     if (loadtm >= 10) {
-      startgameel.style.display = "flex";
       loadpage.style.display = "none";
       clearInterval(intervallodatm);
     } else {
@@ -1185,7 +1186,7 @@ function startGame() {
     batasarena = new component(10, 500, "white", innerWidth, 0);
     myBackground = new component(2933, 500, "asset/bg.jpg", 0, 0, "background");
     myMusic.play();
-    myGameArea.start();
+    
     countingdown();
 }
 
