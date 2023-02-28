@@ -5,6 +5,7 @@ const startgameel = document.getElementById("fristpagedisp");
 const settings = document.getElementById("settings");
 const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
+const loadpage = document.getElementById("load");
 
 
 
@@ -1014,9 +1015,20 @@ const words = [
 
 
 
-function fristpage(){
+function loadgame(){
+  var loadtm = 0;
+  var intervallodatm = setInterval(ldtime, 400);
 
-  startgameel.style.display = "flex";
+  function ldtime() {
+    if (loadtm >= 10) {
+      startgameel.style.display = "flex";
+      loadpage.style.display = "none";
+      clearInterval(intervallodatm);
+    } else {
+      loadtm++;
+    }
+  }
+  
 
 }
 
